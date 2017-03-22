@@ -5,7 +5,18 @@ This is a repository for the Forum Fisheries Agencies Open Standards Initiative.
 The aim of the initiative is to develop the standards required to simplify the
 development of fisheries management information systems among our membership.
 
-You can find all our Data, Process and Checklist standards here.
+You can find all our Data, Process and Checklist standards here:
+
+-   [Entity Data
+    Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#entity):
+    This defines data standards for entities. Entities are things like
+    individuals, organizations, vessels etc. They can be legal entities like
+    individuals, companies etc. or non-legal entities like vessels
+
+-   [Condition Data
+    Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#conditions):
+    This defines the data standards for a condition. Conditions are be applied
+    to authorizations.
 
 Why Open Standards?
 -------------------
@@ -15,8 +26,8 @@ in size and scale where we need to take a step back and consolidate our efforts
 to manage the increasing complexity of systems.
 
 **Complexity**: The current scale of the system magnifies cost and complexity.
-If this is not actively addressed and managed, this complexity get worse as time
-progresses and
+If this is not actively addressed and managed, this complexity will only get
+worse as time progresses and
 
 1.  More and more features are added,
 
