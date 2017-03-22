@@ -1,12 +1,18 @@
 Open Standards
 ==============
 
-Why Open Standards
-------------------
+This is a repository for the Forum Fisheries Agencies Open Standards Initiative.
+The aim of the initiative is to develop the standards required to simplify the
+development of fisheries management information systems among our membership.
+
+You can find all our Data, Process and Checklist standards here.
+
+Why Open Standards?
+-------------------
 
 **Scale / Size**: Systems within the FFA membership have reached a tipping point
-in size and scale where we need to take a step back and consolidate / adjust our
-current approach.
+in size and scale where we need to take a step back and consolidate our efforts
+to manage the increasing complexity of systems.
 
 **Complexity**: The current scale of the system magnifies cost and complexity.
 If this is not actively addressed and managed, this complexity get worse as time
@@ -18,12 +24,11 @@ progresses and
 
 The impact of this complexity is
 
->   **Systems Fragility**: As the scale of the systems we manage increases so
->   too does the level of complexity. This in turn breeds fragility and
->   increases the risks of system failures.
+**Fragility**: As the scale increases, so too does the level of complexity. This
+in turn breeds fragility and increases the risks of system failures.
 
->   **Systems Costs**: The costs of managing this increasing complexity is a
->   drain on resources (time, money and expertise).
+**Systems Costs**: As scale increases, the costs of managing this increasing
+complexity is a drain on resources (time, money and expertise).
 
 Solution
 --------
