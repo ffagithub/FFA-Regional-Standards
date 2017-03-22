@@ -41,16 +41,12 @@ worse as time progresses and
 
 2.  More and more systems are introduced into the region
 
-The impact of this complexity is
+As the scale of systems increases, so too does the level of complexity. This in
+turn does the following:
 
-**Fragility**: As the scale of systems increases, so too does the level of
-complexity. This in turn breeds fragility and increases the risks of system
-failures.
+**Fragility**: Breeds fragility and increases the risks of system failures.
 
-**Costs**: As the scale of systems increase, so too does the costs of developing
-and maintaining these systems increases. If complexity isn’t properly managed
-and mitigated there is an accelerated drain on resources (time, money and
-expertise).
+**Costs**: Accelerates the drain on resources (time, money and expertise).
 
 Solution
 --------
