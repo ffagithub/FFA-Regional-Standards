@@ -9,14 +9,22 @@ You can find all our Data, Process and Checklist standards here:
 
 -   [Entity Data
     Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#entity):
-    This defines data standards for entities. Entities are things like
-    individuals, organizations, vessels etc. They can be legal entities like
-    individuals, companies etc. or non-legal entities like vessels
+    This standard defines the data fields required to capture information about
+    entities. Entities are things like individuals, organizations, vessels etc.
+    They can be legal entities like individuals, companies etc. or non-legal
+    entities like vessels
 
 -   [Condition Data
     Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#conditions):
-    This defines the data standards for a condition. Conditions are be applied
-    to authorizations.
+    This standard defines the data fields required to capture information about
+    a condition. Conditions can be applied to authorizations. Authorizations are
+    things like licenses, agreements, permits etc.
+
+-   [Authorization Data
+    Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#authorisation):
+    This standard defines the data fields required to capture information about
+    an authorization. Authorizations are things like licenses, agreements,
+    permits etc.
 
 Why Open Standards?
 -------------------
