@@ -189,6 +189,91 @@ Vessel Identification
 | Flag State Country             | char     | A 2 character alphabetic code as defined by ISO31066-alpa2 standard                                                                                                                                                                                                                                                                                                             | CK                                   |
 | Supporting Documents           | varchar  | Path to the uploads of supporting documents required by the fisheries authorities                                                                                                                                                                                                                                                                                               | /var/www/docs/supporting-docs.pdf    |
 
+Notes: Questions needing Answers
+================================
+
+-   Is using GUID instead of database generated auto-increment numbers useful
+    for scalability assuming multiple systems? Do we need to capture, domain and
+    path?
+
+-   How long a Captain has been on a particular vessel? Why? Important for
+    history of infringements on captains for person of interest, MCS, Due
+    Diligence
+
+-   Issues sometimes not picked up in regional databases, need additional checks
+    e.g. Google search vessel name for infringements / violations
+
+Fishing Vessel Registry 
+========================
+
+Data standards if you need to operate a vessel registry. Otherwise use
+infrastructure already setup at FFA, WCPFC, SPC, Loyds/IMO, Maritime/Transport
+etc. If issues FIX ISSUES.
+
+Vessel Details
+--------------
+
+| **Property**             | **Type** | **Description**                                                                                          | **Example** |
+|--------------------------|----------|----------------------------------------------------------------------------------------------------------|-------------|
+| Vessel ID                | char     |                                                                                                          |             |
+| Vessel Name              | varchar  |                                                                                                          |             |
+| IMO / UVI                | integer  |                                                                                                          |             |
+| IRCS                     | char     |                                                                                                          |             |
+| FFA VID                  | integer  |                                                                                                          |             |
+| WCPFC VID                | integer  |                                                                                                          |             |
+| SPC VID                  | integer  |                                                                                                          |             |
+| Vessel Category          | varchar  |                                                                                                          |             |
+| Vessel Type              | char     |                                                                                                          |             |
+| Gear Type                | char     |                                                                                                          |             |
+| Gross Registered Tonnage | decimal  |                                                                                                          |             |
+| Length Overall           | decimal  |                                                                                                          |             |
+| Beam                     | decimal  |                                                                                                          |             |
+| Molded Depth             | decimal  |                                                                                                          |             |
+| Engine Power             | decimal  |                                                                                                          |             |
+| Engine Power Units       | char     |                                                                                                          |             |
+| Crew Compliment          | integer  |                                                                                                          |             |
+| Number of Fish Holds     | integer  |                                                                                                          |             |
+| Supporting Documents     | varchar  | A path to supporting documents e.g. passports, certificate of incorporation, vessel registry certificate |             |
+| Notes                    | text     |                                                                                                          |             |
+
+Vessel Communication
+--------------------
+
+| **Property**                      | **Type** | **Description** | **Example** |
+|-----------------------------------|----------|-----------------|-------------|
+| ID                                | integer  |                 |             |
+| Vessel ID                         |          |                 |             |
+| Communication Type ID             |          |                 |             |
+| Communication Name                |          |                 |             |
+| Communication Details             |          |                 |             |
+| Communication Installer Entity ID |          |                 |             |
+
+Vessel Storage Capacity
+-----------------------
+
+| **Property**      | **Type** | **Description** | **Example** |
+|-------------------|----------|-----------------|-------------|
+| ID                | integer  |                 |             |
+| Vessel ID         |          |                 |             |
+| Gear Type ID      |          |                 |             |
+| Vessel ID         |          |                 |             |
+| Storage Type ID   |          |                 |             |
+| Number            |          |                 |             |
+| Capacity          |          |                 |             |
+| Capacity Units    |          |                 |             |
+| Temperature       |          |                 |             |
+| Temperature Units |          |                 |             |
+
+Storage Capacity
+----------------
+
+| **Property**     | **Type** | **Description** | **Example** |
+|------------------|----------|-----------------|-------------|
+| ID               | integer  |                 |             |
+| Vessel ID        |          |                 |             |
+| Storage Type ID  |          |                 |             |
+| Storage Capacity |          |                 |             |
+
 Type Definitions
 ================
 
@@ -351,75 +436,3 @@ Payment For
 -   VMS Fee (PG)
 
 -   Duplication / Printing Fee (PG)
-
-Notes: Questions needing Answers
-================================
-
--   How long a Captain has been on a particular vessel? Why? Important for
-    history of infringements on captains for person of interest, MCS, Due
-    Diligence
-
--   Issues sometimes not picked up in regional databases, need additional checks
-    e.g. Google search vessel name for infringements / violations
-
-Vessel Registry Data Standards
-==============================
-
-Only needed if you need to operate a vessel registry. Otherwise use
-infrastructure already setup at FFA, WCPFC, Loyds/IMO, Maritime/Transport etc.
-If issues FIX ISSUES.
-
-Vessel Details
---------------
-
-| **Property**             | **Type** | **Description**                                                                                          | **Example** |
-|--------------------------|----------|----------------------------------------------------------------------------------------------------------|-------------|
-| Vessel ID                | char     |                                                                                                          |             |
-| Gross Registered Tonnage | decimal  |                                                                                                          |             |
-| Length Overall           | decimal  |                                                                                                          |             |
-| Beam                     | decimal  |                                                                                                          |             |
-| Molded Depth             | decimal  |                                                                                                          |             |
-| Engine Power             | decimal  |                                                                                                          |             |
-| Engine Power Units       | char     |                                                                                                          |             |
-| Crew Compliment          | integer  |                                                                                                          |             |
-| Number of Fish Holds     | integer  |                                                                                                          |             |
-| Supporting Documents     | varchar  | A path to supporting documents e.g. passports, certificate of incorporation, vessel registry certificate |             |
-| Notes                    | text     |                                                                                                          |             |
-
-Vessel Communication
---------------------
-
-| **Property**                      | **Type** | **Description** | **Example** |
-|-----------------------------------|----------|-----------------|-------------|
-| ID                                | integer  |                 |             |
-| Vessel ID                         |          |                 |             |
-| Communication Type ID             |          |                 |             |
-| Communication Name                |          |                 |             |
-| Communication Details             |          |                 |             |
-| Communication Installer Entity ID |          |                 |             |
-
-Vessel Storage Capacity
------------------------
-
-| **Property**      | **Type** | **Description** | **Example** |
-|-------------------|----------|-----------------|-------------|
-| ID                | integer  |                 |             |
-| Vessel ID         |          |                 |             |
-| Gear Type ID      |          |                 |             |
-| Vessel ID         |          |                 |             |
-| Storage Type ID   |          |                 |             |
-| Number            |          |                 |             |
-| Capacity          |          |                 |             |
-| Capacity Units    |          |                 |             |
-| Temperature       |          |                 |             |
-| Temperature Units |          |                 |             |
-
-Storage Capacity
-----------------
-
-| **Property**     | **Type** | **Description** | **Example** |
-|------------------|----------|-----------------|-------------|
-| ID               | integer  |                 |             |
-| Vessel ID        |          |                 |             |
-| Storage Type ID  |          |                 |             |
-| Storage Capacity |          |                 |             |
