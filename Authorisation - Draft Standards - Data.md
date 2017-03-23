@@ -192,7 +192,7 @@ Vessel Identification
 Notes: Questions needing Answers
 ================================
 
--   Is using GUID instead of database generated auto-increment numbers useful
+-   Is using UUID instead of database generated auto-increment numbers useful
     for scalability assuming multiple systems? Do we need to capture, domain and
     path?
 
