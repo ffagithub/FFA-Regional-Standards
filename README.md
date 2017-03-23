@@ -29,35 +29,44 @@ You can find all our Data, Process and Checklist standards here:
 Why Open Standards?
 -------------------
 
-**Scale / Size**: Systems within the FFA membership have reached a tipping point
-in size and scale where we need to take a step back and consolidate our efforts
-to manage the increasing complexity of systems.
+**Scale, Complexity and Cost**: Fisheries systems within the FFA membership have
+reached a tipping point in size and scale where we need to take a more
+structured approach to managing cost and complexity involved in the development
+and maintenance of these systems. If this is not addressed and properly managed,
+this complexity will only get worse as
 
-**Complexity**: The current scale of the system magnifies cost and complexity.
-If this is not actively addressed and managed, this complexity will only get
-worse as time progresses and
+1.  More and more features are added to systems,
 
-1.  More and more features are added,
+2.  And more and more systems are introduced into the region
 
-2.  More and more systems are introduced into the region
+This will lead to:
 
-As the scale of systems increases, so too does the level of complexity. This in
-turn does the following:
+**Fragility**: Increased fragility both within systems and between systems
+increasing the risks of system failures and data loss.
 
-**Fragility**: Breeds fragility and increases the risks of system failures.
+**Costs**: an increased drain on resources (time, money and expertise).
 
-**Costs**: Accelerates the drain on resources (time, money and expertise).
+So… Open Standards?
+-------------------
 
-Solution
---------
+Open standards are one way of addressing this complexity issue via the creation
+of stable, predictable and reusable components that will provide the core
+building blocks needed to:
 
-**Open Standards:** One way of addressing this complexity issue is via the
-creation of open standards. These standards will provide the core building
-blocks (data, processes, checklists) needed to:
+1.  Build simpler and more robust systems
 
-1.  Provide the stability, predictability and repeatability needed to build
-    simpler and more robust systems
+2.  Improve the ability to exchange data between different systems
 
-2.  Improve and simplify the ability to exchange data between different systems
+3.  Allow us to build systems at scale without incurring the additional cost
 
-3.  Allow us to build systems at scale
+What are these reusable components?
+-----------------------------------
+
+The reusable components for a system are defined as
+
+1.  **Data:** The data that needs to be captured
+
+2.  **Processes:** The process that this data goes through
+
+3.  **Checklists:** The checks and balances that need to be performed as this
+    data flows through the system
