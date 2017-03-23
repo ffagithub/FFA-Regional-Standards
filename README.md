@@ -33,18 +33,18 @@ Why Open Standards?
 reached a tipping point in size and scale where we need to take a more
 structured approach to managing cost and complexity involved in the development
 and maintenance of these systems. If this is not addressed and properly managed,
-this complexity will only get worse as
+this complexity will only get worse as:
 
-1.  More and more features are added to systems,
+>   **More Features** are added to systems,
 
-2.  And more and more systems are introduced into the region
+>   **More Systems** are introduced into the region
 
 This will lead to:
 
-**Fragility**: Increased fragility both within systems and between systems
-increasing the risks of system failures and data loss.
+>   **Fragility**: Increased fragility both within systems and between systems
+>   increasing the risks of system failures and data loss.
 
-**Costs**: an increased drain on resources (time, money and expertise).
+>   **Costs**: an increased drain on resources (time, money and expertise).
 
 So… Open Standards?
 -------------------
