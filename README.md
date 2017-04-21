@@ -26,6 +26,11 @@ You can find all our Data, Process and Checklist standards here:
     an authorization. Authorizations are things like licenses, agreements,
     permits etc.
 
+-   [Vessel Data
+    Standard](https://github.com/ffagithub/FFA-Regional-Standards/blob/master/Authorisation%20-%20Draft%20Standards%20-%20Data.md#vessel-identification):
+    This standard defines only the unique identifiers needed to cross check
+    information against various vessel registries online.
+
 Why Open Standards?
 -------------------
 
