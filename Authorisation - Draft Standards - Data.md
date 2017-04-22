@@ -198,13 +198,13 @@ Activity
 | **Property**     | **Type**  | **Description**                                                                                                                   | **Example**                                                                    |
 |------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | ID               | char      | A globally unique identifier (GUID) issued by the system to identify the activity                                                 | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a                                           |
+| Entity ID        | char      | A globally unique identifier (GUID) issued by the system to identify the Port, Vessel or Processing Plant                         | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2b                                           |
 | Authorization ID | char      | A globally unique identifier (GUID) issued by the system to an **Entity** to help determine whether its activities are authorized | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b                                           |
 | Activity Type    | varchar   | A dropdown list of activities e.g. Trip, Catch, Transship, Unload, Processing, Inspection, Boarding, Contacts                     | Trip                                                                           |
-| Vessel ID        | char      | A globally unique identifier (GUID) issued by the system to Vessel                                                                | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2c                                           |
 | Date Time        | date time | An [ISO 8601 : 1988](https://www.iso.org/iso-8601-date-and-time-format.html) date time stamp format of when the activity occured  | 1994-11-05T08:15:30-05:00                                                      |
-| Latitude         |           | An [ISO 6709:2008](https://www.iso.org/standard/39242.html) ±DDDMM.M representation of latitude                                   | \- 4012.22                                                                     |
-| Longitude        |           | An ISO 6709:2008 ±DDDMM.M representation of longitude                                                                             | \- 07500.25                                                                    |
-| Description      | text      | An optional text description of the activity                                                                                      | Fishing Trip                                                                   |
+| Latitude         | float     | An [ISO 6709:2008](https://www.iso.org/standard/39242.html) ±DDDMM.M representation of latitude                                   | \- 4012.22                                                                     |
+| Longitude        | float     | An ISO 6709:2008 ±DDDMM.M representation of longitude                                                                             | \- 07500.25                                                                    |
+| Notes            | text      | An optional text description of the activity                                                                                      | Fishing Trip                                                                   |
 | Uploads          | varchar   | An optional field to store the location of file uploads                                                                           | https://rimf.ffa.int/uploads/activity/234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b.jpg |
 
 Trip
@@ -212,45 +212,119 @@ Trip
 
 | **Property** | **Type** | **Description**                                                                                                                              | **Example**                          |
 |--------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| ID           | char     | A globally unique identifier (GUID) issued by the system used to identify the activity                                                       | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| ID           | char     | A globally unique identifier (GUID) issued by the system used to identify the trip                                                           | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Activity ID  | char     | A globally unique identifier (GUID) issued by the system used to identify the activity                                                       | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
 | From         | char     | A globally unique identifier (GUID) issued by the system used to identify an Entity. In this case either a Port, Vessel or Processing Plant  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f93c2d |
 | To           | char     | A globally unique identifier (GUID) issued by the system used to identify an Entity. In this case either a Port, Vessel or Processing Plant. | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2e |
 
 Catch
 -----
 
-| **Property** | **Type** | **Description**                                                                                                                                                                    | **Example**                          |
-|--------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| ID           | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
-| Catch        | float    | Weight of Catch                                                                                                                                                                    | 6.6                                  |
-| Metric       | char     | Metric used to measure catch                                                                                                                                                       | mt                                   |
-| Species      | char     | Target species being targeted for catch represented by a 3 character alphabetic code defined by FAO in the [ASFIS list of species](http://www.fao.org/fishery/collection/asfis/en) | TUX                                  |
-| By Catch     | bool     | Indication of whether this by catch record                                                                                                                                         | No                                   |
+| **Property**  | **Type** | **Description**                                                                                                                                                                    | **Example**                          |
+|---------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| ID            | char     | A globally unique identifier (GUID) issued by the system used to identify the catch                                                                                                | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Activity ID   | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Recorded By   | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2c |
+| Species       | char     | Target species being targeted for catch represented by a 3 character alphabetic code defined by FAO in the [ASFIS list of species](http://www.fao.org/fishery/collection/asfis/en) | TUX                                  |
+| Catch         | float    | Weight of Catch                                                                                                                                                                    | 6.6                                  |
+| Catch Metric  | char     | Metric used to measure catch                                                                                                                                                       | mt                                   |
+| Catch Fate    | char     | E.g. Retained, Discarded etc…                                                                                                                                                      |                                      |
+| By Catch      | bool     | Indication of whether this by catch record                                                                                                                                         | F                                    |
+| \# of Fish    | integer  | Number of Fish                                                                                                                                                                     | 1234                                 |
+| Length        | float    | Length of Fish                                                                                                                                                                     | 24                                   |
+| Length Metric | char     | Length of Fish Metric                                                                                                                                                              | cm                                   |
 
 Catch Movement
 --------------
 
-| **Property** | **Type** | **Description**                                                                                                                                                                    | **Example**                          |
-|--------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| ID           | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b |
-| From         | char     | A globally unique identifier (GUID) issued by the system to identify the Port, Vessel or Processing Plat                                                                           | 234e1dd7-2a7f-18fb-b8ed-ed78c3f93c2b |
-| To           | char     | A globally unique identifier (GUID) issued by the system to identify the Port, Vessel or Processing Plat                                                                           | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2b |
-| Catch        | float    | Weight of Catch                                                                                                                                                                    | 6.6                                  |
-| Metric       | char     | Metric used to measure catch                                                                                                                                                       | mt                                   |
-| Species      | char     | Target species being targeted for catch represented by a 3 character alphabetic code defined by FAO in the [ASFIS list of species](http://www.fao.org/fishery/collection/asfis/en) | TUX                                  |
-| By Catch     | bool     | Indication of whether this by catch record                                                                                                                                         | No                                   |
+| **Property**  | **Type** | **Description**                                                                                                                                                                    | **Example**                          |
+|---------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| ID            | char     | A globally unique identifier (GUID) issued by the system used to identify the movement of the catch                                                                                | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Activity ID   | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b |
+| Movement Type | char     | e.g. Unloading, Transshipment, Processing                                                                                                                                          | Unloading                            |
+| Recorded By   |          | A globally unique identifier (GUID) issued by the system used to identify the movement of the catch                                                                                | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b |
+| From          | char     | A globally unique identifier (GUID) issued by the system to identify the Port, Vessel or Processing Plat                                                                           | 234e1dd7-2a7f-18fb-b8ed-ed78c3f93c2b |
+| To            | char     | A globally unique identifier (GUID) issued by the system to identify the Port, Vessel or Processing Plat                                                                           | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2b |
+| Species       | char     | Target species being targeted for catch represented by a 3 character alphabetic code defined by FAO in the [ASFIS list of species](http://www.fao.org/fishery/collection/asfis/en) | TUX                                  |
+| Metric        | char     | Metric used to measure catch                                                                                                                                                       | mt                                   |
+| Weight        | float    | Weight                                                                                                                                                                             | 23                                   |
+| Numbers       | integer  | How much                                                                                                                                                                           | 23                                   |
 
-Inspection
-----------
+Inspection, **Boarding, Contact**
+---------------------------------
 
-**Boarding**
-------------
+| **Property** | **Type** | **Description**                                                                                                    | **Example**                          |
+|--------------|----------|--------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| ID           | char     | A globally unique identifier (GUID) issued by the system used to identify the inspection, boarding or the contact  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Activity ID  | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b |
+| Type         | char     | Indicate what type of activity this was i.e. INSPECTION, BOARDING, CONTACT                                         | BOARDING                             |
+| Jurisdiction | char     | 2 character country code as defined in the ISO3166-1-Alpha-2                                                       | CK                                   |
+| Organization | char     | A globally unique identifier (GUID) issued by the system an Entity. In this case an Organization who is an Officer | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2b |
+| Officer ID   | char     | A globally unique identifier (GUID) issued by the system an Entity. In this case an Individual who is an Officer   | 234e1dd7-2a7f-18fb-b8ed-ed78c3f93c2b |
 
-Contact
--------
+Port Sample
+-----------
+
+| **Property** | **Type** | **Description** | **Example** |
+|--------------|----------|-----------------|-------------|
+|              |          |                 |             |
+
+Effort: Purse Seine
+-------------------
+
+Refer to SPC ER
+
+| **Property**      | **Type** | **Description**                                                                   | **Example**                          |
+|-------------------|----------|-----------------------------------------------------------------------------------|--------------------------------------|
+| ID                | char     | A globally unique identifier (GUID) issued by the system to identify the activity | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Activity Code     | char     | E.g. Fishing Set etc…                                                             |                                      |
+| School Associated | bool     | Is this associated with a FAD?                                                    | T                                    |
+| Start             | time     | Start of Set                                                                      |                                      |
+| End               | time     | End of Set                                                                        |                                      |
+| Well Number       | integer  |                                                                                   |                                      |
+
+Effort: Longline
+----------------
+
+| **Property** | **Type** | **Description**                                                                   | **Example**                          |
+|--------------|----------|-----------------------------------------------------------------------------------|--------------------------------------|
+| ID           | char     | A globally unique identifier (GUID) issued by the system to identify the activity | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+
+Effort: Pole and Line
+---------------------
+
+| **Property** | **Type** | **Description**                                                                   | **Example**                          |
+|--------------|----------|-----------------------------------------------------------------------------------|--------------------------------------|
+| ID           | char     | A globally unique identifier (GUID) issued by the system to identify the activity | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
+|              |          |                                                                                   |                                      |
 
 Case
 ====
+
+| **Property**   | **Type** | **Description**                                                                                                                                   | **Example**                          |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| ID             | char     | A globally unique identifier (GUID) issued by the system used to identify the inspection, boarding or the contact                                 | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2a |
+| Violation Type |          | Type of Violation e.g. Violation of International Laws, Violation of National Laws, Violation of Licensing Terms and Conditions, Other Violations |                                      |
+| Activity ID    | char     | A globally unique identifier (GUID) issued by the system to identify the activity                                                                 | 234e1dd7-2a7f-18fb-b8ed-ed78c3f92c2b |
+| Status         | char     | Indicate whether the case is Open or Closed                                                                                                       | Open                                 |
+| Source         | char     | Indicate the source of this case e.g. Boarding, Inspection, Contact, VMS Incident, Public Report, Surveillance Operation, Other etc…              | BOARDING                             |
+| Stage          | char     | What stage is the case at e.g. Investigation, Compliance Review, Legal Review, Act                                                                | Legal Review                         |
+| Action Taken   | char     | What action is being taken e.g. Not Applicable, No Action Taken, Warning, Fine, Prosecution                                                       | Fine                                 |
+| Result         | char     | What was the outcome of the case e.g. Result Pending, Out of Court Resolution, Won in Court, Lost in Court                                        | Out of Court Resolution              |
+| Jurisdiction   | char     | 2 character country code as defined in the ISO3166-1-Alpha-2                                                                                      | CK                                   |
+| Organization   | char     | A globally unique identifier (GUID) issued by the system an Entity. In this case an Organization who is an Officer                                | 234e1dd7-2a7f-18fb-b8ed-ed78c3f94c2b |
+| Officer ID     | char     | A globally unique identifier (GUID) issued by the system an Entity. In this case an Individual who is an Officer                                  | 234e1dd7-2a7f-18fb-b8ed-ed78c3f93c2b |
+| Notes          | text     |                                                                                                                                                   |                                      |
+| Uploads        | varchar  |                                                                                                                                                   |                                      |
 
 Notes: Questions needing Answers
 ================================
